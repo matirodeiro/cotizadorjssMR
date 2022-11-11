@@ -37,13 +37,13 @@ const cotizarSeguro=()=>{
                           </div>`;
     
     setTimeout(()=>{
-        divResumen.style.backgroundColor="#00838F";
+        divResumen.style.backgroundColor="#F9E4B7";
         divResumen.innerHTML=`
                         <h2> Resumen de Cotizacion</h2>
                          <ul>
                              <li>Marca: ${marca}</li>
                              <li>Plan: ${plan}</li>
-                             <li>Año del auto: ${year}</li>
+                             <li>Año del telefono: ${year}</li>
                              
                          <ul>
                          `;
@@ -56,7 +56,7 @@ const cotizarSeguro=()=>{
 //resultado y calculo de la cotizacion       
 const cotizar=(cotizacion)=>{
     const {marca, year, plan}=cotizacion;
-    let resultado=15000;
+    let resultado=3000;
 
     const diferenciaYear=diferencia(year);
     resultado-=((diferenciaYear*3)*resultado)/100;
@@ -75,9 +75,12 @@ const calcularMarca=marca=>{
     let incremento;
 
     switch(marca){
-        case 'audi': incremento=1.30; break;
-        case 'peugeot': incremento=1.15; break;
-        case 'fiat': incremento=1.05; break; 
+        case 'iphone': incremento=1.70; break;
+        case 'samsung': incremento=1.60; break;
+        case 'motorola': incremento=1.35; break; 
+        case 'xiaomi': incremento=1.25; break; 
+        case 'huawei': incremento=1.15; break; 
+
     }
     return incremento;
 }
